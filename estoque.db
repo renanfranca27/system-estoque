@@ -1,0 +1,17 @@
+CREATE TABLE produtos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    categoria TEXT,
+    quantidade INTEGER,
+    preco REAL,
+    localizacao TEXT
+);
+
+CREATE TABLE movimentacoes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    produto_id INTEGER,
+    tipo TEXT,
+    quantidade INTEGER,
+    data DATETIME,
+    FOREIGN KEY(produto_id) REFERENCES produtos(id)
+); 
